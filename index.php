@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
 	<head>
 		<meta name="google-site-verification" content="B-rELLAyRf5kaXynTQldI32HBFNxVttzgksoT6AqWA8" />
 		<meta charset="utf-8">
@@ -16,7 +17,7 @@
 		<script src="http://code.jquery.com/jquery.min.js"></script>
 		<script src="js/bootstrap.js"></script>
 		<script src="https://api.filepicker.io/v0/filepicker.js"></script>
-		<script src="js/filepicker.js "text/javascript"></script>
+		<script src="js/filepicker.js" type="text/javascript"></script>
 		
 		<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 		<!--[if lt IE 9]>
@@ -53,3 +54,4 @@
 		
 	</body>
 </html>
+
