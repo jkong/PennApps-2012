@@ -13,6 +13,8 @@ while ($coupon = $coupons->fetch_array()) {
   echo '<br />';
   echo 'Description: ' . $coupon['description'];
   echo '<br />';
+  $userInfo = $facebook->api('/' . $coupon['author']);
+  echo 'Posted by: ' . $userInfo['name'];
   $datetime = strtotime($coupon['createDate']);
   echo 'Date Added: ' . date('m/d/y g:i A', $datetime);
   echo '</div>';

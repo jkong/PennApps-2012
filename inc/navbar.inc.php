@@ -45,6 +45,7 @@ echo 'userid = ' . $userid;
               <?php if ($userId) { 
                 $userInfo = $facebook->api('/' . $userId);
                 echo 'Welcome ' . $userInfo['name'];
+                echo "<img src='http://graph.facebook.com/" . $userId . "/picture' style='padding-left:15px'/>";
                 } else {
                 echo '<fb:login-button></fb:login-button>';
               } ?>
