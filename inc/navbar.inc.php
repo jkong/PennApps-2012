@@ -28,7 +28,7 @@
               <?php if ($fbUserID) { 
                 $userInfo = $facebook->api('/' . $fbUserID);
                 echo 'Welcome ' . $userInfo['name'];
-                echo "<img src='http://graph.facebook.com/" . $userId . "/picture' style='padding-left:15px'/>";
+                echo "<img src='http://graph.facebook.com/" . $fbUserID . "/picture' style='padding-left:15px'/>";
                 } else {
                 echo '<fb:login-button></fb:login-button>';
               } ?>
