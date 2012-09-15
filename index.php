@@ -37,7 +37,11 @@
 							<p>
 								 
 							</p>
-							<input type="filepicker-dragdrop"/>
+								<input type="filepicker-dragdrop" data-fp-apikey="A5lqlPP84RH6fEu4JsHNyz" 
+								data-fp-option-container="modal" data-fp-option-multiple="true" 
+								data-fp-option-services="BOX,COMPUTER,DROPBOX,FACEBOOK,GITHUB,GOOGLE_DRIVE,FLICKR,GMAIL,INSTAGRAM,IMAGE_SEARCH,URL,WEBCAM" 
+								onchange="out='';for(var i=0;i<event.files.length;i++){out+=event.files[i].url;out+=' '};alert(out)"> 
+							
 							</div>
 					</div>
 				</div>
