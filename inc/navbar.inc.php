@@ -11,6 +11,7 @@ $facebook = new Facebook(array(
 ));
 
 $userId = $facebook->getUser();
+echo 'userid = ' . $userid;
 
 ?>
 
