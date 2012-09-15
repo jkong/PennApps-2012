@@ -31,7 +31,7 @@
             <div class="pull-left span5">
               <h1></h1>
               
-              Join Clipmob and start saving!
+              <?php require_once('load_coupons.php'); ?>
               
             </div>
           </div>
@@ -52,4 +52,3 @@
     
   </body>
 </html>
-

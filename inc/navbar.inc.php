@@ -12,7 +12,7 @@
                 <a href="index.php"><img src="img/clipmoblogo.png" width="100" height="32" alt="Logo"/></a>
               </li>
               <li>
-                <a href="index.php">Browse Deals</a>
+                <a href="browse.php">Browse Deals</a>
               </li>
               <li>
                 <a href="friends.php">Friends</a>
