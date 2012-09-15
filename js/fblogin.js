@@ -1,7 +1,7 @@
 window.fbAsyncInit = function() {
   FB.init({
     appId      : '479471488739276', // App ID
-    channelUrl : '//www.jobcoll.com/index.php', // Channel File
+    channelUrl : 'http://www.jobcoll.com/channel.php', // Channel File
     status     : true, // check login status
     cookie     : true, // enable cookies to allow the server to access the session
     xfbml      : true  // parse XFBML
