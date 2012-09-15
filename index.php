@@ -13,7 +13,10 @@
 		<link href="stylesheets/bootstrap-responsive.css" rel="stylesheet">
 		<link rel="stylesheet/less" type="text/css" href="m.less">
 		<script src="js/less.js" type="text/javascript"></script>
-		
+		<script src="http://code.jquery.com/jquery.min.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<script src="https://api.filepicker.io/v0/filepicker.js"></script>
+		<script src="js/filepicker.js "text/javascript"></script>
 		<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 		<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -22,8 +25,7 @@
 	<body>
 		<?php
 		include_once ('inc/navbar.inc.html');
-		?>
-		
+		?>		
 		<div class="container">
 			<div id="body">
 				<!-- Main hero unit for a primary marketing message or call to action -->
@@ -47,12 +49,6 @@
 		<!-- Le javascript
 		================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
-		<script src="http://code.jquery.com/jquery.min.js"></script>
-		<script src="js/bootstrap.js"></script>
-		<script src="https://api.filepicker.io/v0/filepicker.js"></script>
-		<script type="text/javascript">
-    			//Seting up Filepicker.io with your api key
-    			filepicker.setKey('A5lqlPP84RH6fEu4JsHNyz');
-		</script>
+		
 	</body>
 </html>
