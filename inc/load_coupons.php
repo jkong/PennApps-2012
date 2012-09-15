@@ -14,7 +14,9 @@ while ($coupon = $coupons->fetch_array()) {
   echo 'Description: ' . $coupon['description'];
   echo '<br />';
   $userInfo = $facebook->api('/' . $coupon['author']);
+  echo "<img src='http://graph.facebook.com/" . $coupon['author'] . "/picture' style='padding-right:10px'/>";
   echo 'Posted by: ' . $userInfo['name'];
+  echo '<br />';
   $datetime = strtotime($coupon['createDate']);
   echo 'Date Added: ' . date('m/d/y g:i A', $datetime);
   echo '</div>';
