@@ -62,6 +62,9 @@ $mysqli->close();
                 Downvotes: <?php echo $downvotes; ?>
                 
               </p>
+              
+              <a href="index.php">Return</a>
+              
             </div>
           </div>
         </div>
