@@ -17,9 +17,9 @@ $userId = $facebook->getUser();
 <div id="fb-root"></div>
 <?php if ($userId) { 
       $userInfo = $facebook->api('/' . $userId); ?>
-      Welcome <?= $userInfo['name'] ?>
+Welcome <?= $userInfo['name'] ?>
     <?php } else { ?>
-    <fb:login-button></fb:login-button>
+<fb:login-button></fb:login-button>
     <?php } ?>
 <script src="js/fblogin.js" type="text/javascript"></script>
 <div id="wrapper">
@@ -58,4 +58,6 @@ $userId = $facebook->getUser();
       </div>
     </div>
   </div>
+  <div id="fb-root"></div>
+  <script src="js/fbinit.js" type="text/javascript"></script>
   
