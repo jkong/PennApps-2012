@@ -29,11 +29,10 @@
               <?php if ($fbUserID) { 
                 $userInfo = $facebook->api('/' . $fbUserID);
                 echo 'Welcome ' . $userInfo['name'];
-                echo "<img src='http://graph.facebook.com/" . $fbUserID . "/picture' style='padding-left:15px'/>";
-				echo "<button onclick='fbLogout()'>Logout</button>";  
-                } else {
-                echo '<fb:login-button></fb:login-button>';
+                echo "<img src='http://graph.facebook.com/" . $fbUserID . "/picture' style='padding-left:15px; padding-right:15px'/>";
               } ?>
+              <fb:login-button autologoutlink="true"></fb:login-button>
+              
               <!-- <div class="input-prepend">
                       <span class="add-on search-query"><i class="icon-search icon-white"></i></span>
                       <input type="text" class="search-query span3" placeholder="search">
