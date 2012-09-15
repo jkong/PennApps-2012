@@ -6,6 +6,9 @@ window.fbAsyncInit = function() {
     cookie     : true, // enable cookies to allow the server to access the session
     xfbml      : true  // parse XFBML
   });
+  FB.Event.subscribe('auth.login', function(resp) {
+        window.location = 'http://www.jobcoll.com/index.php';
+    });
 };
 // Load the SDK Asynchronously
 (function(d){

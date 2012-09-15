@@ -1,5 +1,6 @@
 <div id="fb-root"></div>
 <script src="js/fbinit.js" type="text/javascript"></script>
+<script src="js/fbcalls.js" type="text/javascript"></script>
 <div id="wrapper">
   <div id="header">
     <div class="navbar navbar-fixed-top">
@@ -28,10 +29,10 @@
               <?php if ($fbUserID) { 
                 $userInfo = $facebook->api('/' . $fbUserID);
                 echo 'Welcome ' . $userInfo['name'];
-                echo "<img src='http://graph.facebook.com/" . $fbUserID . "/picture' style='padding-left:15px'/>";
-                } else {
-                echo '<fb:login-button></fb:login-button>';
+                echo "<img src='http://graph.facebook.com/" . $fbUserID . "/picture' style='padding-left:15px; padding-right:15px'/>";
               } ?>
+              <fb:login-button autologoutlink="true"></fb:login-button>
+              
               <!-- <div class="input-prepend">
                       <span class="add-on search-query"><i class="icon-search icon-white"></i></span>
                       <input type="text" class="search-query span3" placeholder="search">
@@ -43,5 +44,4 @@
     </div>
   </div>
   <div id="fb-root"></div>
-  <script src="js/fbinit.js" type="text/javascript"></script>
   
