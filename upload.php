@@ -6,9 +6,9 @@ if (isset($_GET['post'])) {
   $author = 'ANONYMOUS';
   
   $upload = $mysqli->prepare('INSERT INTO coupon (code, author, vendor, 
-        expiration, title, description) VALUES (?, ?, ?, ?, ?, ?)');
-  $upload->bind_param('ssssss', $_POST['code'], $author, $_POST['vendor'], str_replace("/", "", $_POST['expiration']), 
-          $_POST['title'], $_POST['description']);
+        expiration, title, description, url) VALUES (?, ?, ?, ?, ?, ?, ?)');
+  $upload->bind_param('sssssss', $_POST['code'], $author, $_POST['vendor'], str_replace("/", "", $_POST['expiration']), 
+          $_POST['title'], $_POST['description'], $_POST['filepicker-url']);
   $upload->execute();
   $upload->close();
   
@@ -36,7 +36,7 @@ if (isset($_GET['post'])) {
     <script src="js/less.js" type="text/javascript"></script>
     <script src="http://code.jquery.com/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
-    <script src="js/filepicker.js" type="text/javascript"></script>
+    <script type="text/javascript" src="//api.filepicker.io/v0/filepicker.js"></script>
     
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -63,14 +63,33 @@ if (isset($_GET['post'])) {
                 
               <form method="POST" action="upload.php?post=1">
                 
+                <script>
+                  function setValueAsURL(url) {
+                    document.getElementById("filepicker-url").value = url;
+                  }
+                </script>
+                <label for="filepicker">Upload an image of the coupon</label>
+                <input name="filepicker" id="filepicker" value="" type="filepicker-dragdrop" data-fp-apikey="A5lqlPP84RH6fEu4JsHNyz" data-fp-option-container="modal" 
+                       data-fp-option-persist="true" 
+                       data-fp-option-services="COMPUTER,BOX,DROPBOX,FACEBOOK,GOOGLE_DRIVE,FLICKR,INSTAGRAM,IMAGE_SEARCH,URL,WEBCAM" 
+                       data-fp-button-text="Upload Coupon"
+                       onchange="setValueAsURL(event.files[0].url)">
+                
+                <input type="hidden" name="filepicker-url" id="filepicker-url" value="">
+                
+                <br /><br />
+                
                 <label for="vendor">Retailer</label>
-                <input name="vendor" type="text">
+                <input id="vendor" name="vendor" type="text">
                 
                 <label for="title">Title</label>
                 <input name="title" type="text">
                 
                 <label for="description">Description (optional)</label>
                 <input name="description" type="text">
+                
+                <label for="expiration">Expiration Date (mm/dd/yyyy)</label>
+                <input name="expiration" type="text">
                 
                 <label for="code">Code (optional)</label>
                 <input name="code" type="text">
@@ -80,29 +99,6 @@ if (isset($_GET['post'])) {
                 <input type="submit" value="submit" />
                 
               </form>
-              
-              <!--<div class="vspace1em">&nbsp;</div>
-              <div class="row-fluid">
-                <div class="span2">
-                  <button style="margin-top: 10px" class="btn btn-inverse" data-name="simple get" 
-                          onClick="filepicker.getFile('image/*', 
-                {'container': 'modal', 'services': 
-                [filepicker.SERVICES.COMPUTER, filepicker.SERVICES.DROPBOX,filepicker.SERVICES.FLICKR, filepicker.SERVICES.URL], 
-                'maxsize': 500* 500},
-                function(url, metadata){ var results = $('#getContentsImage').text('Loading...');filepicker.getContents(url, true, function(data){
-                    var data_url = 'data:'+metadata.type+';base64,'+data;
-                    results.html('<img width=\'400\' src=\''+data_url+'\'/>');
-                });});"
-                          >Upload</button>
-                </div>
-              </div>
-              
-              <div class="row-fluid">
-                <div class="span2"><strong>Result:</strong></div>
-                <div class="span10">
-                  <pre id="getContentsImage"><a></a></pre>
-                </div>
-              </div>-->
               
               </p>
               
@@ -120,7 +116,7 @@ if (isset($_GET['post'])) {
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script type="text/javascript" src="//api.filepicker.io/v0/filepicker.js"></script>
+    
   </body>
 </html>
 
