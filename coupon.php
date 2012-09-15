@@ -1,3 +1,11 @@
+<?php 
+
+$coupon_id = $_GET['coupon_id'];
+require_once('db.config.php');
+$mysqli->close();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -37,7 +45,6 @@
               <p>
                 
               </p>
-              <input type="filepicker-dragdrop"/>
             </div>
           </div>
         </div>
