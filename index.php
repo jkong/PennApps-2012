@@ -31,9 +31,9 @@
               <h1></h1>
               
               <?php require_once('load_coupons.php'); ?>
-			  <!--<script> FB.api('/me', function(response) {
+			  <script> FB.api('/me', function(response) {
   alert('Your name is ' + response.name);
-});</script>-->
+});</script>
             </div>
           </div>
         </div>

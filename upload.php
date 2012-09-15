@@ -85,9 +85,6 @@ if (isset($_GET['post'])) {
                 <label for="title">Title</label>
                 <input name="title" type="text" required="required">
                 
-                <label for="expiration">Code (optional)</label>
-                <input name="code" type="text" required="required">
-                
                 <label for="description">Description (optional)</label>
                 <input name="description" type="text">
                 
