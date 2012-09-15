@@ -1,12 +1,13 @@
 <?php 
-
 if (isset($_GET['post'])) {
   
   require_once('db.config.php');
   
+  $author = 'ANONYMOUS';
+  
   $upload = $mysqli->prepare('INSERT INTO coupon (code, author, vendor, 
         expiration, title, description) VALUES (?, ?, ?, ?, ?, ?)');
-  $upload->bind_param('sssiss', $_POST['code'], $_POST['author'], $_POST['vendor'], str_replace("/", "", $_POST['expiration']), 
+  $upload->bind_param('ssssss', $_POST['code'], $author, $_POST['vendor'], str_replace("/", "", $_POST['expiration']), 
           $_POST['title'], $_POST['description']);
   $upload->execute();
   $upload->close();
@@ -35,7 +36,6 @@ if (isset($_GET['post'])) {
     <script src="js/less.js" type="text/javascript"></script>
     <script src="http://code.jquery.com/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
-    <script src="https://api.filepicker.io/v0/filepicker.js"></script>
     <script src="js/filepicker.js" type="text/javascript"></script>
     
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -62,20 +62,23 @@ if (isset($_GET['post'])) {
                 <br />
                 
               <form method="POST" action="upload.php?post=1">
-                <label for="code">Code</label>
-                <input name="code" type="text">
                 
-                <label for="vendor">Vendor</label>
+                <input type="filepicker-dragdrop" data-fp-apikey="A5lqlPP84RH6fEu4JsHNyz" 
+                     data-fp-option-container="modal" data-fp-option-multiple="true" 
+                     data-fp-option-services="BOX,COMPUTER,DROPBOX,FACEBOOK,GITHUB,GOOGLE_DRIVE,FLICKR,GMAIL,INSTAGRAM,IMAGE_SEARCH,URL,WEBCAM" 
+                     onchange="out='';for(var i=0;i<event.files.length;i++){out+=event.files[i].url;out+=' '};alert(out)"> 
+                
+                <label for="vendor">Retailer</label>
                 <input name="vendor" type="text">
-                
-                <label for="expiration">Expiration (mm/dd/yyyy)</label>
-                <input name="expiration" type="text">
                 
                 <label for="title">Title</label>
                 <input name="title" type="text">
                 
-                <label for="description">description</label>
+                <label for="description">Description (optional)</label>
                 <input name="description" type="text">
+                
+                <label for="code">Code (optional)</label>
+                <input name="code" type="text">
                 
                 <br/>
                 
@@ -84,6 +87,9 @@ if (isset($_GET['post'])) {
               </form>
               
               </p>
+              
+              <a href="index.php">Return</a>
+              
             </div>
           </div>
         </div>
@@ -96,6 +102,7 @@ if (isset($_GET['post'])) {
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://api.filepicker.io/v0/filepicker.js"></script>
     
   </body>
 </html>
