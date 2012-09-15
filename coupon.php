@@ -1,7 +1,15 @@
 <?php 
 
-$coupon_id = $_GET['coupon_id'];
+$coupon_id = $_GET['id'];
 require_once('db.config.php');
+
+$coupon = $mysqli->prepare('SELECT * FROM coupon WHERE id = ?');
+$coupon->bind_param('i', $coupon_id);
+$coupon->execute();
+$coupon->bind_result($id, $code, $author, $vendor, $expiration, $title, $description, $upvotes, $downvotes, $createDate);
+$coupon->fetch();
+$coupon->close();
+
 $mysqli->close();
 
 ?>
@@ -41,10 +49,22 @@ $mysqli->close();
         <div class="hero-unit">
           <div class="hero-unit clearfix">
             <div class="pull-left span5">
-              <h1></h1>
+              <h1>Coupon: <?php echo $id; ?></h1>
               <p>
                 
+                <br />
+                Code: <?php echo $code; ?><br />
+                Title: <?php echo $title; ?><br />
+                Description: <?php echo $description; ?><br />
+                Expiration Date: <?php echo $expiration; ?><br />
+                Author: <?php echo $author; ?><br />
+                Upvotes: <?php echo $upvotes; ?><br />
+                Downvotes: <?php echo $downvotes; ?>
+                
               </p>
+              
+              <a href="index.php">Return</a>
+              
             </div>
           </div>
         </div>

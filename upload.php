@@ -4,17 +4,16 @@ if (isset($_GET['post'])) {
   
   require_once('db.config.php');
   
-  $date = date_create_from_format('M/d/Y', $_POST['expiration']);
-  
   $upload = $mysqli->prepare('INSERT INTO coupon (code, author, vendor, 
         expiration, title, description) VALUES (?, ?, ?, ?, ?, ?)');
-  $upload->bind_param('sssiss', $_POST['code'], $_POST['author'], $_POST['vendor'], $date->getTimestamp(), 
+  $upload->bind_param('sssiss', $_POST['code'], $_POST['author'], $_POST['vendor'], str_replace("/", "", $_POST['expiration']), 
           $_POST['title'], $_POST['description']);
   $upload->execute();
   $upload->close();
   
   $mysqli->close();
   
+  $message = '<br />Coupon uploaded to the database!';
 }
 
 ?>
@@ -55,6 +54,9 @@ if (isset($_GET['post'])) {
           <div class="hero-unit clearfix">
             <div class="pull-left span5">
               <h1>Upload</h1>
+              
+              <?php if(isset($message)) { echo '<p>' . $message . '</p>'; } ?>
+              
               <p>
                 
                 <br />
@@ -66,7 +68,7 @@ if (isset($_GET['post'])) {
                 <label for="vendor">Vendor</label>
                 <input name="vendor" type="text">
                 
-                <label for="expiration">Expiration</label>
+                <label for="expiration">Expiration (mm/dd/yyyy)</label>
                 <input name="expiration" type="text">
                 
                 <label for="title">Title</label>
