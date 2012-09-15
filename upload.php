@@ -17,7 +17,7 @@ if (isset($_GET['post'])) {
   $message = '<br />Coupon uploaded to the database!';
 }
 
-?>
+?>	
 
 <!DOCTYPE html>
 <html lang="en">
