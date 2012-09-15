@@ -28,7 +28,7 @@
 				<div class="hero-unit">
 					<div class="hero-unit clearfix">
 						<div class="pull-left span5">
-							<h1>Our Website</h1>
+							<h1></h1>
 							<p>
 								Description Here.
 							</p>
