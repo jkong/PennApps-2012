@@ -54,6 +54,7 @@
     <script src="js/bootstrap.js"></script>
     <script src="https://api.filepicker.io/v0/filepicker.js"></script>
     <script src="js/filepicker.js" type="text/javascript"></script>
+    <script src="js/dropbox.js" type="text/javascript"></script>
   </body>
 </html>
 
