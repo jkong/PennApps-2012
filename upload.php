@@ -81,7 +81,7 @@ if (isset($_GET['post'])) {
                 
               </form>
               
-              <div class="vspace1em">&nbsp;</div>
+              <!--<div class="vspace1em">&nbsp;</div>
               <div class="row-fluid">
                 <div class="span2">
                   <button style="margin-top: 10px" class="btn btn-inverse" data-name="simple get" 
@@ -98,11 +98,11 @@ if (isset($_GET['post'])) {
               </div>
               
               <div class="row-fluid">
-                <div class="span2"><strong><!--Result:--></strong></div>
+                <div class="span2"><strong>Result:</strong></div>
                 <div class="span10">
                   <pre id="getContentsImage"><a></a></pre>
                 </div>
-              </div>
+              </div>-->
               
               </p>
               
@@ -120,8 +120,7 @@ if (isset($_GET['post'])) {
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://api.filepicker.io/v0/filepicker.js"></script>
-    <script src="js/filepicker.js" type="text/javascript"></script>
+    <script type="text/javascript" src="//api.filepicker.io/v0/filepicker.js"></script>
   </body>
 </html>
 
