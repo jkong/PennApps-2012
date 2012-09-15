@@ -16,13 +16,7 @@ echo 'userid = ' . $userid;
 ?>
 
 <div id="fb-root"></div>
-<?php if ($userId) { 
-      $userInfo = $facebook->api('/' . $userId); ?>
-Welcome <?= $userInfo['name'] ?>
-    <?php } else { ?>
-<fb:login-button></fb:login-button>
-    <?php } ?>
-<script src="js/fblogin.js" type="text/javascript"></script>
+<script src="js/fbinit.js" type="text/javascript"></script>
 <div id="wrapper">
   <div id="header">
     <div class="navbar navbar-fixed-top">
@@ -48,7 +42,12 @@ Welcome <?= $userInfo['name'] ?>
               </li>
             </ul>
             <div class="navbar-search pull-right">
-              <div class="fb-login-button">Login with Facebook</div>
+              <?php if ($userId) { 
+                $userInfo = $facebook->api('/' . $userId);
+                echo 'Welcome ' . $userInfo['name'];
+                } else {
+                echo '<fb:login-button></fb:login-button>';
+              } ?>
               <!-- <div class="input-prepend">
                       <span class="add-on search-query"><i class="icon-search icon-white"></i></span>
                       <input type="text" class="search-query span3" placeholder="search">
