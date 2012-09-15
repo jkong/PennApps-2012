@@ -1,3 +1,4 @@
+<?php require_once('inc/pre-scripts.php'); ?>
 <?php 
 
 $coupon_id = $_GET['id'];
