@@ -63,11 +63,6 @@ if (isset($_GET['post'])) {
                 
               <form method="POST" action="upload.php?post=1">
                 
-                <input type="filepicker-dragdrop" data-fp-apikey="A5lqlPP84RH6fEu4JsHNyz" 
-                     data-fp-option-container="modal" data-fp-option-multiple="true" 
-                     data-fp-option-services="BOX,COMPUTER,DROPBOX,FACEBOOK,GITHUB,GOOGLE_DRIVE,FLICKR,GMAIL,INSTAGRAM,IMAGE_SEARCH,URL,WEBCAM" 
-                     onchange="out='';for(var i=0;i<event.files.length;i++){out+=event.files[i].url;out+=' '};alert(out)"> 
-                
                 <label for="vendor">Retailer</label>
                 <input name="vendor" type="text">
                 
@@ -82,15 +77,15 @@ if (isset($_GET['post'])) {
                 
                 <br/>
                 
-                                           <input type="filepicker-dragdrop" data-fp-apikey="A5lqlPP84RH6fEu4JsHNyz"
-               data-fp-option-container="modal" data-fp-option-maxsize="1000000" 
-               onchange="alert(event.files[0].url)">
+                <input type="submit" value="submit" />
                 
-        <div class="vspace1em">&nbsp;</div>
-        <div class="row-fluid">
-            <div class="span2">
-                <button style="margin-top: 10px" class="btn btn-inverse" data-name="simple get" 
-                onClick="filepicker.getFile('image/*', 
+              </form>
+              
+              <div class="vspace1em">&nbsp;</div>
+              <div class="row-fluid">
+                <div class="span2">
+                  <button style="margin-top: 10px" class="btn btn-inverse" data-name="simple get" 
+                          onClick="filepicker.getFile('image/*', 
                 {'container': 'modal', 'services': 
                 [filepicker.SERVICES.COMPUTER, filepicker.SERVICES.DROPBOX,filepicker.SERVICES.FLICKR, filepicker.SERVICES.URL], 
                 'maxsize': 500* 500},
@@ -98,20 +93,16 @@ if (isset($_GET['post'])) {
                     var data_url = 'data:'+metadata.type+';base64,'+data;
                     results.html('<img width=\'400\' src=\''+data_url+'\'/>');
                 });});"
-                >Upload</button>
-            </div>
-        </div>
-
-        <div class="row-fluid">
-            <div class="span2"><strong>Result:</strong></div>
-            <div class="span10">
-                <pre id="getContentsImage"><a></a></pre>
-            </div>
-        </div>
-                
-                <input type="submit" value="submit" />
-                
-              </form>
+                          >Upload</button>
+                </div>
+              </div>
+              
+              <div class="row-fluid">
+                <div class="span2"><strong><!--Result:--></strong></div>
+                <div class="span10">
+                  <pre id="getContentsImage"><a></a></pre>
+                </div>
+              </div>
               
               </p>
               

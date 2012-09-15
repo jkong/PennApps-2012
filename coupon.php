@@ -31,8 +31,6 @@ $mysqli->close();
     <script src="js/less.js" type="text/javascript"></script>
     <script src="http://code.jquery.com/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
-    <script src="https://api.filepicker.io/v0/filepicker.js"></script>
-    <script src="js/filepicker.js" type="text/javascript"></script>
     
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
