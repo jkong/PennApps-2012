@@ -20,7 +20,7 @@
   </head>
   <body>
     <?php
-    include_once ('inc/navbar.inc.html');
+    include_once ('inc/navbar.inc.php');
     ?>
     <div class="container">
       <div id="body">
@@ -31,14 +31,13 @@
               <h1></h1>
               
               <?php require_once('load_coupons.php'); ?>
-			  
             </div>
           </div>
         </div>
       </div>
     </div> 
     <?php
-    include_once ('inc/footer.inc.html');
+    include_once ('inc/footer.inc.php');
     ?>
     <!-- /container -->
     <!-- Le javascript

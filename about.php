@@ -20,7 +20,7 @@
 	</head>
 	<body>
 		<?php
-		include_once ('inc/navbar.inc.html');
+		include_once ('inc/navbar.inc.php');
 		?>		
 		<div class="container">
 			<div id="body">
@@ -28,7 +28,7 @@
 			</div>
 		</div>
 		<?php
-		include_once ('inc/footer.inc.html');
+		include_once ('inc/footer.inc.php');
 		?>
 		<!-- /container -->
 		<!-- Le javascript
