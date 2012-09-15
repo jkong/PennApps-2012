@@ -34,6 +34,7 @@
 							<p>
 								 
 							</p>
+							<input type="filepicker-dragdrop"/>
 							</div>
 					</div>
 				</div>
@@ -48,5 +49,10 @@
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="http://code.jquery.com/jquery.min.js"></script>
 		<script src="js/bootstrap.js"></script>
+		<script src="https://api.filepicker.io/v0/filepicker.js"></script>
+		<script type="text/javascript">
+    			//Seting up Filepicker.io with your api key
+    			filepicker.setKey('A5lqlPP84RH6fEu4JsHNyz');
+		</script>
 	</body>
 </html>
