@@ -1,20 +1,26 @@
+<?php require_once('inc/pre-scripts.php'); ?>
+
 <?php 
 if (isset($_GET['post'])) {
   
   require_once('db.config.php');
   
-  $author = $userId;
-  
-  $upload = $mysqli->prepare('INSERT INTO coupon (code, author, vendor, 
-        expiration, title, description, url) VALUES (?, ?, ?, ?, ?, ?, ?)');
+ $author = $fbUserID;
+ 
+ $url = 'default';
+ if ($_POST['filepicker-url'] !== '') {
+   $url = $_POST['filepicker-url'];
+ }
+ 
+  $upload = $mysqli->prepare('INSERT INTO coupon (code, author, vendor, expiration, title, description, url) VALUES (?, ?, ?, ?, ?, ?, ?)');
   $upload->bind_param('sssssss', $_POST['code'], $author, $_POST['vendor'], str_replace("/", "", $_POST['expiration']), 
-          $_POST['title'], $_POST['description'], $_POST['filepicker-url']);
+          $_POST['title'], $_POST['description'], $url);
   $upload->execute();
   $upload->close();
   
   $mysqli->close();
   
-  $message = '<br />Coupon uploaded to the database!';
+  $message = '<br />Coupon uploaded to the database! filepicker-url = ' . $url;
 }
 
 ?>	

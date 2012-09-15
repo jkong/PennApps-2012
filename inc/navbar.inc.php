@@ -1,20 +1,3 @@
-<?php
-
-define('YOUR_APP_ID', '479471488739276');
-
-//uses the PHP SDK.  Download from https://github.com/facebook/php-sdk
-require 'lib/fb-php-sdk/facebook.php';
-
-$facebook = new Facebook(array(
-  'appId'  => '479471488739276',
-  'secret' => '3fff44039c9aa1ff89155fd418443a4b',
-));
-
-$userId = $facebook->getUser();
-echo 'userid = ' . $userid;
-
-?>
-
 <div id="fb-root"></div>
 <script src="js/fbinit.js" type="text/javascript"></script>
 <div id="wrapper">
@@ -42,8 +25,8 @@ echo 'userid = ' . $userid;
               </li>
             </ul>
             <div class="navbar-search pull-right">
-              <?php if ($userId) { 
-                $userInfo = $facebook->api('/' . $userId);
+              <?php if ($fbUserID) { 
+                $userInfo = $facebook->api('/' . $fbUserID);
                 echo 'Welcome ' . $userInfo['name'];
                 echo "<img src='http://graph.facebook.com/" . $userId . "/picture' style='padding-left:15px'/>";
                 } else {
