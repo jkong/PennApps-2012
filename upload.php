@@ -64,17 +64,19 @@ if (isset($_GET['post'])) {
               <form method="POST" action="upload.php?post=1">
                 
                 <label for="vendor">Retailer</label>
-                <input name="vendor" type="text">
+                <input name="vendor" type="text" required="required">
                 
                 <label for="title">Title</label>
-                <input name="title" type="text">
+                <input name="title" type="text" required="required">
+                
+                <label for="expiration">Code (optional)</label>
+                <input name="code" type="text" required="required">
                 
                 <label for="description">Description (optional)</label>
                 <input name="description" type="text">
                 
                 <label for="code">Code (optional)</label>
                 <input name="code" type="text">
-                
                 <br/>
                 
                 <input type="submit" value="submit" />
