@@ -6,7 +6,7 @@ require_once('db.config.php');
 $coupon = $mysqli->prepare('SELECT * FROM coupon WHERE id = ?');
 $coupon->bind_param('i', $coupon_id);
 $coupon->execute();
-$coupon->bind_result($id, $code, $author, $vendor, $expiration, $title, $description, $upvotes, $downvotes, $createDate);
+$coupon->bind_result($id, $code, $author, $vendor, $expiration, $title, $description, $upvotes, $downvotes, $url, $createDate);
 $coupon->fetch();
 $coupon->close();
 
@@ -51,6 +51,7 @@ $mysqli->close();
               <p>
                 
                 <br />
+                <img src="<?php echo $url; ?>" /><br />
                 Code: <?php echo $code; ?><br />
                 Title: <?php echo $title; ?><br />
                 Description: <?php echo $description; ?><br />
