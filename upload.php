@@ -5,7 +5,7 @@ if (isset($_GET['post'])) {
   
   require_once('db.config.php');
   
- $author = $userid;
+ $author = $fbUserID;
   
  $url = 'default';
  if ($_POST['filepicker-url'] !== '') {
