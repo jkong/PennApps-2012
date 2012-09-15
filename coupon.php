@@ -51,6 +51,7 @@ $mysqli->close();
             <div class="pull-left span5">
               <h1>Coupon: <?php echo $id; ?></h1>
               <p>
+                
                 <br />
                 Code: <?php echo $code; ?><br />
                 Title: <?php echo $title; ?><br />
