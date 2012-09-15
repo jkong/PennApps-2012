@@ -1,5 +1,6 @@
 <div id="fb-root"></div>
 <script src="js/fbinit.js" type="text/javascript"></script>
+<script src="js/fbcalls.js" type="text/javascript"></script>
 <div id="wrapper">
   <div id="header">
     <div class="navbar navbar-fixed-top">
@@ -29,6 +30,7 @@
                 $userInfo = $facebook->api('/' . $fbUserID);
                 echo 'Welcome ' . $userInfo['name'];
                 echo "<img src='http://graph.facebook.com/" . $fbUserID . "/picture' style='padding-left:15px'/>";
+				echo "<button onclick='fbLogout()'>Logout</button>";  
                 } else {
                 echo '<fb:login-button></fb:login-button>';
               } ?>
@@ -43,5 +45,4 @@
     </div>
   </div>
   <div id="fb-root"></div>
-  <script src="js/fbinit.js" type="text/javascript"></script>
   

@@ -21,3 +21,8 @@ function checkLogin() {
   }
  });
 }
+function fbLogout() {
+	FB.logout(function(response) {
+  // user is now logged out
+});	
+}
