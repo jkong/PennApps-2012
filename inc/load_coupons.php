@@ -7,6 +7,8 @@ while ($coupon = $coupons->fetch_array()) {
   echo '<br />';
   echo '<a href="coupon.php?id=' . $coupon['id'] . '">';
   echo '<div class="coupon">';
+  echo '<img src="' . $coupon['url'] . '" width="100px" />';
+  echo '<br />';
   echo 'Title: ' . $coupon['title'];
   echo '<br />';
   echo 'Description: ' . $coupon['description'];
