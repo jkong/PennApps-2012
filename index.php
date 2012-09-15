@@ -3,7 +3,7 @@
 	<head>
 		<meta name="google-site-verification" content="B-rELLAyRf5kaXynTQldI32HBFNxVttzgksoT6AqWA8" />
 		<meta charset="utf-8">
-		<title> Clipmob </title>
+		<title>Clipmob</title>
 		<link rel="shortcut icon" type="image/png" href = "img/clipmobfavicon.png">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="Find the best deals for you!">
