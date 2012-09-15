@@ -1,12 +1,13 @@
 <?php 
-
 if (isset($_GET['post'])) {
   
   require_once('db.config.php');
   
+  $author = 'ANONYMOUS';
+  
   $upload = $mysqli->prepare('INSERT INTO coupon (code, author, vendor, 
         expiration, title, description) VALUES (?, ?, ?, ?, ?, ?)');
-  $upload->bind_param('sssiss', $_POST['code'], $_POST['author'], $_POST['vendor'], str_replace("/", "", $_POST['expiration']), 
+  $upload->bind_param('ssssss', $_POST['code'], $author, $_POST['vendor'], str_replace("/", "", $_POST['expiration']), 
           $_POST['title'], $_POST['description']);
   $upload->execute();
   $upload->close();
@@ -62,20 +63,18 @@ if (isset($_GET['post'])) {
                 <br />
                 
               <form method="POST" action="upload.php?post=1">
-                <label for="code">Code</label>
-                <input name="code" type="text">
                 
-                <label for="vendor">Vendor</label>
+                <label for="vendor">Retailer</label>
                 <input name="vendor" type="text">
-                
-                <label for="expiration">Expiration (mm/dd/yyyy)</label>
-                <input name="expiration" type="text">
                 
                 <label for="title">Title</label>
                 <input name="title" type="text">
                 
-                <label for="description">description</label>
+                <label for="description">Description (optional)</label>
                 <input name="description" type="text">
+                
+                <label for="code">Code (optional)</label>
+                <input name="code" type="text">
                 
                 <br/>
                 

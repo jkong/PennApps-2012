@@ -70,9 +70,9 @@ $mysqli->close();
         </div>
       </div>
     </div> 
-		<?php
-		include_once ('inc/footer.inc.html');
-		?>
+    <?php
+    include_once ('inc/footer.inc.html');
+    ?>
     <!-- /container -->
     <!-- Le javascript
     ================================================== -->
