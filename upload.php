@@ -75,15 +75,18 @@ if (isset($_GET['post'])) {
                        data-fp-button-text="Upload Coupon"
                        onchange="setValueAsURL(event.files[0].url)">
                 
-                <input type="hidden" name="filepicker-url" id="filepicker-url" value="">
+                <input type="hidden" name="filepicker-url" id="filepicker-url" value="" required="required">
                 
                 <br /><br />
                 
                 <label for="vendor">Retailer</label>
-                <input id="vendor" name="vendor" type="text">
+                <input name="vendor" type="text" required="required">
                 
                 <label for="title">Title</label>
-                <input name="title" type="text">
+                <input name="title" type="text" required="required">
+                
+                <label for="expiration">Code (optional)</label>
+                <input name="code" type="text" required="required">
                 
                 <label for="description">Description (optional)</label>
                 <input name="description" type="text">
@@ -93,7 +96,6 @@ if (isset($_GET['post'])) {
                 
                 <label for="code">Code (optional)</label>
                 <input name="code" type="text">
-                
                 <br/>
                 
                 <input type="submit" value="submit" />
