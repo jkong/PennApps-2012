@@ -12,11 +12,6 @@
 		<link href="stylesheets/bootstrap.css" rel="stylesheet">
 		<link href="stylesheets/bootstrap-responsive.css" rel="stylesheet">
 		<link rel="stylesheet/less" type="text/css" href="m.less">
-		<script src="js/less.js" type="text/javascript"></script>
-		<script src="http://code.jquery.com/jquery.min.js"></script>
-		<script src="js/bootstrap.js"></script>
-		<script src="https://api.filepicker.io/v0/filepicker.js"></script>
-		<script src="js/filepicker.js" type="text/javascript"></script>
 		
 		<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 		<!--[if lt IE 9]>
@@ -40,7 +35,7 @@
 								<input type="filepicker-dragdrop" data-fp-apikey="A5lqlPP84RH6fEu4JsHNyz" 
 								data-fp-option-container="modal" data-fp-option-multiple="true" 
 								data-fp-option-services="BOX,COMPUTER,DROPBOX,FACEBOOK,GITHUB,GOOGLE_DRIVE,FLICKR,GMAIL,INSTAGRAM,IMAGE_SEARCH,URL,WEBCAM" 
-								onchange="out='';for(var i=0;i<event.files.length;i++){out+=event.files[i].url;out+=' '};alert(out)"> 
+							    onchange="out='';for(var i=0;i<event.files.length;i++){out+=event.files[i].url;out+=' '};alert(out)"> 
 							
 							</div>
 					</div>
@@ -54,7 +49,11 @@
 		<!-- Le javascript
 		================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
-		
+		<script src="js/less.js" type="text/javascript"></script>
+		<script src="http://code.jquery.com/jquery.min.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<script src="https://api.filepicker.io/v0/filepicker.js"></script>
+		<script src="js/filepicker.js" type="text/javascript"></script>
 	</body>
 </html>
 
