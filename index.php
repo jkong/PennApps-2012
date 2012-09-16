@@ -27,12 +27,14 @@
       <div id="body">
         <!-- Main hero unit for a primary marketing message or call to action -->
         <div class="hero-unit">
-          <div class="hero-unit clearfix">
-            <div class="pull-left span5">
-              <h1></h1>
-              
-              Join Clipmob and start saving!
-              
+          <div class="hero-unit clearfix" align="center">
+              <a href="index.php"> <img src = "img/clipmoblogo.png" width="467px" height="117px"></a>
+              <h1>Join Clipmob and start saving!</h1>
+				<div class="row-fluid">
+					<div class="span4">4</div>
+              		<div class="span4">4</div>
+              		<div class="span4">4</div>
+				</div>
             </div>
           </div>
         </div>
