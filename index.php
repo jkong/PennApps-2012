@@ -52,18 +52,17 @@ if (isset($_GET['login'])) {
         <!-- Main hero unit for a primary marketing message or call to action -->
         <div class="hero-unit">
           <div class="hero-unit clearfix" align="center">
-              <a href="index.php"> <img src = "img/clipmoblogo.png" width="467px" height="117px"></a>
-              <h1>Join Clipmob and start saving!</h1>
+          	  <a href="index.php"> <img src = "img/clipmoblogo.png" width="20%"" align="center"></a>
+              <h3>Join Clipmob and start saving!</h3>
 				<div class="row-fluid">
-					<div class="span4">4</div>
-              		<div class="span4">4</div>
-              		<div class="span4">4</div>
+					<div class="span4">Find Great Coupons</div>
+              		<div class="span4">Share With Friends</div>
+              		<div class="span4">Save them on your Mobile Device</div>
 				</div>
             </div>
           </div>
         </div>
       </div>
-    </div> 
     <?php
     include_once ('inc/footer.inc.php');
     ?>
