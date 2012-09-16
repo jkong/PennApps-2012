@@ -596,6 +596,9 @@ ol ul {
 li {
   line-height: 20px;
 }
+.nav li {
+	line-height: 34px;
+}
 ul.unstyled,
 ol.unstyled {
   margin-left: 0;

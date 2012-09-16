@@ -28,7 +28,7 @@
             <div class="navbar-search pull-right">
               <?php if ($fbUserID) { 
                 $userInfo = $facebook->api('/' . $fbUserID);
-                echo 'Welcome ' . $userInfo['name'];
+                echo $userInfo['name'];
                 echo "<img src='http://graph.facebook.com/" . $fbUserID . "/picture' style='padding-left:15px; padding-right:15px'/>";
               } ?>
               <fb:login-button autologoutlink="true"></fb:login-button>
