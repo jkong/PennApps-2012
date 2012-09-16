@@ -16,19 +16,16 @@
                 <a href="browse.php">Browse Deals</a>
               </li>
               <li>
-                <a href="friends.php">Friends</a>
-              </li>
-              <li>
                 <a href="upload.php">Add a Deal!</a>
               </li>
               <li>
-                <a href="about.php">FAQs</a>
+                <a href="about.php">About Us</a>
               </li>
             </ul>
             <div class="navbar-search pull-right">
               <?php if ($fbUserID) { 
-                $user = $facebook->api('/' . $fbUserID);
-                echo 'Welcome ' . $user['name'];
+                $userInfo = $facebook->api('/' . $fbUserID);
+                echo $userInfo['name'];
                 echo "<img src='http://graph.facebook.com/" . $fbUserID . "/picture' style='padding-left:15px; padding-right:15px'/>";
               } ?>
               <fb:login-button autologoutlink="true"></fb:login-button>

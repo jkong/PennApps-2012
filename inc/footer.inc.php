@@ -1,7 +1,7 @@
 </div> <!-- end navbar wrapper -->
 <div id = "footer" class="clearfix">
 	<div id="footer-wrapper">
-		<footer style= "background:#971923; height:50px;">
+		<footer style= "background:#dd4814; height:50px;">
 			<table width = "100%" style= "background-color:transparent">
 				<tr>
 					<td>&copy; Clipmob 2012</td>
