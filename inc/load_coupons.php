@@ -1,4 +1,12 @@
 <table class="coupons" width="100%"><tbody>
+	<tr>
+		<th>Coupon Image</th>
+		<th>Retailer</th>
+		<th>Title</th>
+		<th>Description</th>
+		<th>Author</th>
+		<th>Date Added</th>
+	</tr>
 <?php
 require_once('db.config.php');
 
@@ -8,25 +16,23 @@ while ($coupon = $coupons->fetch_array()) {
   echo '<tr>';
   echo '<a href="coupon.php?id=' . $coupon['id'] . '">';
   echo '<div class="coupon">';
-  echo '<td class = "coup"><img src="' . $coupon['url'] . '" width="100px" /></td>';
-  echo '<br />';
-  echo '<td class = "retailer">Retailer: ' . $coupon['vendor'];
-  echo '</td><br />';
-  echo 'Title: ' . $coupon['title'];
-  echo '<br />';
-  echo 'Description: ' . $coupon['description'];
-  echo '<br />';
+  echo '<td><img src="' . $coupon['url'] . '" width="100px" /></td>';
+  echo '<td>' . $coupon['vendor'];
+  echo '</td>';
+  echo '<td>' . $coupon['title'];
+  echo '</td>';
+  echo '<td>' . $coupon['description'];
+  echo '</td>';
   $user = $facebook->api('/' . $coupon['author']);
-  echo 'Posted by ' . $user['name'];
-  echo "<img src='http://graph.facebook.com/" . $coupon['author'] . "/picture' style='padding-left:10px'/>";
-  echo '<br />';
+  echo '<td><img src="http://graph.facebook.com/' . $coupon["author"] . '/picture" style="padding-right:10px"/>' . $user['name'];
+  echo '</td>';
   $datetime = strtotime($coupon['createDate']);
-  echo 'Date Added: ' . date('m/d/y g:i A', $datetime);
-  echo '</div>';
+  echo '<td>Date Added: ' . date('m/d/y g:i A', $datetime);
+  echo '</td></div>';
   echo '</a>';
   
-  echo '<a href="saveToDropbox.php?id=' . $coupon['id'] . '&return_url=browse.php">Save to Dropbox</a>';
-  echo '<br />';
+  echo '<td><a href="saveToDropbox.php?id=' . $coupon['id'] . '&return_url=browse.php">Save to Dropbox</a>';
+  echo '</td>';
   echo '</tr>';
 }
 

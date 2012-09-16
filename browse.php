@@ -26,15 +26,10 @@
     <div class="container">
       <div id="body">
         <!-- Main hero unit for a primary marketing message or call to action -->
-        <div class="hero-unit">
-          <div class="hero-unit clearfix">
-            <div class="pull-left span5">
-              <h1></h1>
+  
               
               <?php require_once('load_coupons.php'); ?>
-              
-            </div>
-          </div>
+    
         </div>
       </div>
     </div> 
