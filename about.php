@@ -46,8 +46,15 @@ require_once ('inc/pre-scripts.php');
 									<section id="About">
 										<h3 id="headings">About Clipmob</h3>
 										<p>
-											So you're at your home, browsing through deals for some shopping later in the day. 	 Or maybe you own a small
-											restaurant and are trying to have a promotional event to gain customers. Clipmob is the solution for you then!
+											So you're at your home, browsing through deals for some shopping later in the day. Or maybe you own a small
+											restaurant and are trying to have a promotional event to gain customers. 
+											<br>Don't worry, Clipmob has got you covered! 
+											
+											Clipmob is the place to be if you never want to miss a deal. Retailers and users in the community upload 
+											coupon images using filepicker.io. Members can browse through the selection of coupons and if there's a coupon
+											 that they would want to use, they can save it onto their dropbox. When they go to the store, they can use their
+											 mobile device to show the coupon image and redeem the offer. Our users can rate coupons up or down, meaning
+											 that good deals will never get lost. 
 										</p>
 									</section>
 										<section id="About">
