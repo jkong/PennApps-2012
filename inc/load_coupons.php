@@ -1,16 +1,17 @@
+<table class="coupons" width="100%"><tbody>
 <?php
 require_once('db.config.php');
 
 $coupons = $mysqli->query('SELECT * FROM coupon ORDER BY id DESC');
 
 while ($coupon = $coupons->fetch_array()) {
-  echo '<br />';
+  echo '<tr>';
   echo '<a href="coupon.php?id=' . $coupon['id'] . '">';
   echo '<div class="coupon">';
-  echo '<img src="' . $coupon['url'] . '" width="100px" />';
+  echo '<td class = "coup"><img src="' . $coupon['url'] . '" width="100px" /></td>';
   echo '<br />';
-  echo 'Retailer: ' . $coupon['vendor'];
-  echo '<br />';
+  echo '<td class = "retailer">Retailer: ' . $coupon['vendor'];
+  echo '</td><br />';
   echo 'Title: ' . $coupon['title'];
   echo '<br />';
   echo 'Description: ' . $coupon['description'];
@@ -23,7 +24,10 @@ while ($coupon = $coupons->fetch_array()) {
   echo 'Date Added: ' . date('m/d/y g:i A', $datetime);
   echo '</div>';
   echo '</a>';
+  echo '</tr>';
 }
 
 $mysqli->close();
 ?>
+</tbody>
+</table>
