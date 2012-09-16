@@ -7,7 +7,7 @@ window.fbAsyncInit = function() {
     xfbml      : true  // parse XFBML
   });
   FB.Event.subscribe('auth.login', function(resp) {
-        window.location = 'http://www.jobcoll.com/index.php';
+        window.location = 'http://www.jobcoll.com/index.php?login=true';
     });
 };
 // Load the SDK Asynchronously
