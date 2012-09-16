@@ -52,12 +52,12 @@ if (isset($_GET['login'])) {
         <!-- Main hero unit for a primary marketing message or call to action -->
         <div class="hero-unit">
           <div class="hero-unit clearfix" align="center">
-          	  <a href="index.php"> <img src = "img/clipmoblogo.png" width="20%"" align="center"></a>
+          	  <a href="index.php"> <img src = "img/clipmob.png" width="60%" align="center"></a>
               <h3>Join Clipmob and start saving!</h3>
 				<div class="row-fluid">
 					<div class="span4">Find Great Coupons</div>
-              		<div class="span4">Share With Friends</div>
-              		<div class="span4">Save them on your Mobile Device</div>
+              		<div class="span4">Share with Friends</div>
+              		<div class="span4">Save to your Mobile Device</div>
 				</div>
             </div>
           </div>

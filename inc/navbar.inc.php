@@ -40,5 +40,4 @@
       </div>
     </div>
   </div>
-  <div id="fb-root"></div>
   
