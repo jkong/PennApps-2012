@@ -5,7 +5,6 @@ $consumerKey = 'yloxv4myo44esd2';
 $consumerSecret = '08frgq05u2t3r3c';
 include 'lib/dropbox-php-sdk/autoload.php';
 $oauth = new Dropbox_OAuth_PEAR($consumerKey, $consumerSecret);
-
 $dropbox = new Dropbox_API($oauth, 'sandbox');
 
 if ($fbUserID == 0) {
@@ -13,7 +12,6 @@ if ($fbUserID == 0) {
 }
 
 session_start();
-
 require_once('db.config.php');
 // Check if user is already in database
 $db_check = $mysqli->prepare('SELECT * FROM user WHERE fb_id = ?');
@@ -29,12 +27,24 @@ if ($db_token !== null && $db_secret !== null) {
       token => $db_token,
       token_secret => $db_secret
   );
-  
   $oauth->setToken($tokens);
+
+  // Download image to dropbox
+  $coupon_id = $_GET['id'];
+  $coupon = $mysqli->prepare('SELECT * FROM coupon WHERE id = ?');
+  $coupon->bind_param('i', $coupon_id);
+  $coupon->execute();
+  $coupon->bind_result($id, $code, $author, $vendor, $expiration, $title, $description, $upvotes, $downvotes, $url, $createDate);
+  $coupon->fetch();
+  $coupon->close();
+
+  $dropbox->putFile($vendor . '_' . $title . '_' . $id . '.png', $url);
+  
+  $return_url = $_GET['return_url'];
+  header('Location: ' . $return_url);
 
 } else {
   // Dropbox app needs user's permision
-
   // There are multiple steps in this workflow, we keep a 'state number' here
   if (isset($_SESSION['state'])) {
       $state = $_SESSION['state'];
@@ -86,10 +96,11 @@ if ($db_token !== null && $db_secret !== null) {
         already succeeded. We can use our stored tokens and the api 
         should work. Store these tokens somewhere, like a database */
       case 3 :
-          echo "The user is authenticated\n";
-          echo "You should really save the oauth tokens somewhere, so the first steps will no longer be needed\n";
+          //echo "The user is authenticated\n";
+          //echo "You should really save the oauth tokens somewhere, so the first steps will no longer be needed\n";
           //print_r($_SESSION['oauth_tokens']);
-          $oauth->setToken($_SESSION['oauth_tokens']);
+          //$oauth->setToken($_SESSION['oauth_tokens']);
+          header('Location: saveToDropbox.php');
           break;
     }
 }
