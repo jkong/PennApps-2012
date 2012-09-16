@@ -48,22 +48,22 @@ $mysqli->close();
         <div class="hero-unit">
           <div class="hero-unit clearfix">
             <div class="pull-left span5">
-              <h1>Coupon: <?php echo $id; ?></h1>
+              <h1><?php echo $vendor . ': ' . $title; ?></h1>
               <p>
                 
                 <br />
                 <img src="<?php echo $url; ?>" /><br />
                 Code: <?php echo $code; ?><br />
-                Title: <?php echo $title; ?><br />
                 Description: <?php echo $description; ?><br />
                 Expiration Date: <?php echo $expiration; ?><br />
                 Author: <?php echo $author; ?><br />
                 Upvotes: <?php echo $upvotes; ?><br />
-                Downvotes: <?php echo $downvotes; ?>
+                Downvotes: <?php echo $downvotes; ?><br />
+                <a href="saveToDropbox.php?id=<?php echo $id; ?>&return_url=browse.php">Save to Dropbox</a>
                 
               </p>
               
-              <a href="index.php">Return</a>
+              <a href="browse.php">Return</a>
               
             </div>
           </div>

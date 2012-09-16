@@ -1,4 +1,28 @@
 <?php require_once('inc/pre-scripts.php'); ?>
+<?php
+if (isset($_GET['login'])) {
+
+  require_once('db.config.php');
+  
+  // Check if user is already in database
+  $user_check = $mysqli->prepare('SELECT id FROM user WHERE fb_id = ?');
+  $user_check->bind_param('s', $fbUserID);
+  $user_check->execute();
+  $user_check->bind_result($ID);
+  $user_check->fetch();
+  $user_check->close();
+  
+  if ($ID == null) {
+      // User not in database; need to add him/her
+      $user_add = $mysqli->prepare('INSERT INTO user (fb_id) VALUES (?)');
+      $user_add->bind_param('s', $fbUserID);
+      $user_add->execute();
+      $user_add->close();
+    }
+  
+  $mysqli->close();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -50,8 +74,8 @@
     <script src="js/less.js" type="text/javascript"></script>
     <script src="http://code.jquery.com/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
-	</script>
-    
-  </body>
+  </script>
+  
+</body>
 </html>
 
