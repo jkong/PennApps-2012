@@ -10,4 +10,9 @@ $facebook = new Facebook(array(
 $fbUserID = $facebook->getUser();
 // ---------------------------------------------------------------------
 
+// If user is not logged in to Facebook, they are not allowed to view the rest of the site
+if ($fbUserID == 0) {
+  header('Location: index.php');
+}
+
 ?>
