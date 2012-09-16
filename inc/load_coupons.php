@@ -9,6 +9,8 @@ while ($coupon = $coupons->fetch_array()) {
   echo '<div class="coupon">';
   echo '<img src="' . $coupon['url'] . '" width="100px" />';
   echo '<br />';
+  echo 'Retailer: ' . $coupon['vendor'];
+  echo '<br />';
   echo 'Title: ' . $coupon['title'];
   echo '<br />';
   echo 'Description: ' . $coupon['description'];

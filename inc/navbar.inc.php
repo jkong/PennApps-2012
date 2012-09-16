@@ -16,13 +16,10 @@
                 <a href="browse.php">Browse Deals</a>
               </li>
               <li>
-                <a href="friends.php">Friends</a>
-              </li>
-              <li>
                 <a href="upload.php">Add a Deal!</a>
               </li>
               <li>
-                <a href="about.php">FAQs</a>
+                <a href="about.php">About Us</a>
               </li>
             </ul>
             <div class="navbar-search pull-right">
