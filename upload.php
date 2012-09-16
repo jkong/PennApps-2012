@@ -58,7 +58,6 @@ if (isset($_GET['post'])) {
         <!-- Main hero unit for a primary marketing message or call to action -->
         <div class="hero-unit">
           <div class="hero-unit clearfix">
-            <div class="pull-left span5">
               <h1>Upload</h1>
               
               <?php if(isset($message)) { echo '<p>' . $message . '</p>'; } ?>
@@ -92,7 +91,10 @@ if (isset($_GET['post'])) {
                 <input name="title" type="text" required="required">
                 
                 <label for="description">Description (optional)</label>
-                <input name="description" type="text">
+                <textarea name="description">
+                	
+                </textarea>
+                
                 
                 <label for="expiration">Expiration Date (mm/dd/yyyy)</label>
                 <input name="expiration" type="text">
@@ -109,7 +111,6 @@ if (isset($_GET['post'])) {
               
               <a href="index.php">Return</a>
               
-            </div>
           </div>
         </div>
       </div>
