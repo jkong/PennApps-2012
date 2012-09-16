@@ -58,7 +58,8 @@ $mysqli->close();
                 Expiration Date: <?php echo $expiration; ?><br />
                 Author: <?php echo $author; ?><br />
                 Upvotes: <?php echo $upvotes; ?><br />
-                Downvotes: <?php echo $downvotes; ?>
+                Downvotes: <?php echo $downvotes; ?><br />
+                <a href="saveToDropbox.php?id=<?php echo $id; ?>&return_url=browse.php">Save to Dropbox</a>
                 
               </p>
               

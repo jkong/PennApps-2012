@@ -17,13 +17,16 @@ while ($coupon = $coupons->fetch_array()) {
   echo 'Description: ' . $coupon['description'];
   echo '<br />';
   $user = $facebook->api('/' . $coupon['author']);
-  echo "<img src='http://graph.facebook.com/" . $coupon['author'] . "/picture' style='padding-right:10px'/>";
-  echo 'Posted by: ' . $user['name'];
+  echo 'Posted by ' . $user['name'];
+  echo "<img src='http://graph.facebook.com/" . $coupon['author'] . "/picture' style='padding-left:10px'/>";
   echo '<br />';
   $datetime = strtotime($coupon['createDate']);
   echo 'Date Added: ' . date('m/d/y g:i A', $datetime);
   echo '</div>';
   echo '</a>';
+  
+  echo '<a href="saveToDropbox.php?id=' . $coupon['id'] . '&return_url=browse.php">Save to Dropbox</a>';
+  echo '<br />';
   echo '</tr>';
 }
 
