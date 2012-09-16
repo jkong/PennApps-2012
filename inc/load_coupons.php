@@ -1,4 +1,4 @@
-<table class="coupons" width="100%"><tbody>
+<table class="coupons" width="100%" border="1px	"><tbody>
 	<tr>
 		<th>Coupon Image</th>
 		<th>Retailer</th>
@@ -6,6 +6,7 @@
 		<th>Description</th>
 		<th>Author</th>
 		<th>Date Added</th>
+		<th></th>
 	</tr>
 <?php
 require_once('db.config.php');

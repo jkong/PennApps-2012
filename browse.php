@@ -24,7 +24,7 @@
     include_once ('inc/navbar.inc.php');
     ?>
     <div class="container">
-      <div id="body">
+      <div id="body" style="padding-top:70px">
         <!-- Main hero unit for a primary marketing message or call to action -->
   
               
